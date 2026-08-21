@@ -121,10 +121,89 @@
         .archive-card h4 { color: var(--archive-color) !important; }
 
         /* Social Buttons */
-        .socials { margin: 60px 0; display: flex; gap: 15px; justify-content: center; }
-        .social-btn { text-decoration: none; color: white; padding: 12px 25px; border-radius: 30px; font-weight: 600; display: flex; align-items: center; gap: 10px; transition: 0.3s; }
-        .yt { background-color: var(--yt-color); }
-        .tw { background-color: var(--twitch-color); }
+        .socials {
+            margin: 60px 0;
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            position: relative;
+            min-width: 150px;
+            height: 48px;
+            box-sizing: border-box;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            padding: 0 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.12);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.22);
+            transition: transform 0.28s ease, box-shadow 0.28s ease, filter 0.28s ease;
+        }
+
+        .social-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, rgba(255,255,255,0.20), transparent 45%, rgba(255,255,255,0.05));
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-5px) scale(1.055);
+            filter: brightness(1.10);
+        }
+
+        .social-btn i, .x-icon {
+            position: relative;
+            z-index: 1;
+            width: 19px;
+            height: 19px;
+            font-size: 19px;
+            flex: 0 0 19px;
+        }
+
+        .yt {
+            background: linear-gradient(135deg, #ff0000, #d40000);
+        }
+        .yt:hover {
+            box-shadow: 0 12px 30px rgba(255,0,0,0.34), 0 0 24px rgba(255,0,0,0.22);
+        }
+
+        .tw {
+            background: linear-gradient(135deg, #9146ff, #6f2de0);
+        }
+        .tw:hover {
+            box-shadow: 0 12px 30px rgba(145,70,255,0.38), 0 0 24px rgba(145,70,255,0.23);
+        }
+
+        .x {
+            background: linear-gradient(135deg, #161616, #000);
+        }
+        .x:hover {
+            box-shadow: 0 12px 30px rgba(255,255,255,0.17), 0 0 24px rgba(255,255,255,0.10);
+        }
+
+        .x-icon {
+            fill: currentColor;
+        }
+
+        .gh {
+            background: linear-gradient(135deg, #30363d, #171b20);
+        }
+        .gh:hover {
+            box-shadow: 0 12px 30px rgba(130,140,150,0.25), 0 0 24px rgba(160,170,180,0.10);
+        }
+
         .gn { background-color: #64748b; }
 
         footer { margin: 80px 0 40px; color: var(--text-dim); font-size: 0.8rem; text-align: center; letter-spacing: 2px; text-transform: uppercase; }
@@ -153,8 +232,13 @@
     </header>
 
     <div class="socials">
-        <a href="https://www.youtube.com/@SiegfriedOrigin" target="_blank" class="social-btn yt"><i class="fa-brands fa-youtube"></i> YouTube</a>
-        <a href="https://www.twitch.tv/siegfriedorigin" target="_blank" class="social-btn tw"><i class="fa-brands fa-twitch"></i> Twitch</a>
+        <a href="https://www.youtube.com/@SiegfriedOrigin" target="_blank" rel="noopener noreferrer" class="social-btn yt"><i class="fa-brands fa-youtube"></i> YouTube</a>
+        <a href="https://www.twitch.tv/siegfriedorigin" target="_blank" rel="noopener noreferrer" class="social-btn tw"><i class="fa-brands fa-twitch"></i> Twitch</a>
+        <a href="https://x.com/SiegfriedOrigin" target="_blank" rel="noopener noreferrer" class="social-btn x">
+            <svg class="x-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.657l-5.214-6.817-5.963 6.817H1.684l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X
+        </a>
+        <a href="https://github.com/Siegfried-Origin" target="_blank" rel="noopener noreferrer" class="social-btn gh"><i class="fa-brands fa-github"></i> GitHub</a>
     </div>
 
     <div class="container">
